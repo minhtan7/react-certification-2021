@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import { useAuth } from '../../providers/Auth';
 import './Home.styles.css';
 import mock from '../../mockData/youtube-videos-mock.json';
-import Card from '../../components/Card/Card.component';
+import Card from '../../components/Card';
 
 const MultiCard = styled.div`
   display: inline-flex;

@@ -9,7 +9,7 @@ import SecretPage from '../../pages/Secret';
 import Private from '../Private';
 import Fortune from '../Fortune';
 import Layout from '../Layout';
-import StyledHeader from '../Header/Header.component';
+import Header from '../Header';
 import { random } from '../../utils/fns';
 
 function App() {
@@ -35,7 +35,7 @@ function App() {
     <BrowserRouter>
       <AuthProvider>
         <Layout>
-          <StyledHeader />
+          <Header />
           <Switch>
             <Route exact path="/">
               <HomePage />
