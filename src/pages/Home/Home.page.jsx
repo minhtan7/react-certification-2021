@@ -1,8 +1,18 @@
 import React, { useRef } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-
+import styled from 'styled-components';
 import { useAuth } from '../../providers/Auth';
 import './Home.styles.css';
+import mock from '../../mockData/youtube-videos-mock.json';
+import Card from '../../components/Card/Card.component';
+
+const MultiCard = styled.div`
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  margin: 0px auto;
+`;
 
 function HomePage() {
   const history = useHistory();
@@ -18,7 +28,7 @@ function HomePage() {
   return (
     <section className="homepage" ref={sectionRef}>
       <h1>Hello stranger!</h1>
-      {authenticated ? (
+      {/*  {authenticated ? (
         <>
           <h2>Good to have you back</h2>
           <span>
@@ -31,7 +41,8 @@ function HomePage() {
         </>
       ) : (
         <Link to="/login">let me in →</Link>
-      )}
+      )} */}
+      <MultiCard>{mock && mock.items?.map((i) => <Card card={i} />)}</MultiCard>
     </section>
   );
 }
